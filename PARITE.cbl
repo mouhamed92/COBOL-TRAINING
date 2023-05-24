@@ -1,0 +1,37 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PARITE.
+       AUTHOR.    MOHAMED.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       INPUT-OUTPUT SECTION.
+
+       DATA DIVISION.
+       FILE SECTION.
+       WORKING-STORAGE SECTION.
+
+       01  WS-FIN-SAISIE PIC X(1) VALUE 'N'.
+       01  WS-NUMBER     PIC 9(3).
+       PROCEDURE DIVISION.
+
+       PERFORM UNTIL WS-FIN-SAISIE = 'O'
+
+           DISPLAY "ENTRER UN ENTIER"
+           ACCEPT WS-NUMBER
+
+           IF WS-NUMBER = 0
+               MOVE 'O' TO WS-FIN-SAISIE
+
+           ELSE IF
+               FUNCTION MOD(WS-NUMBER,2)=0
+               DISPLAY "NOMBRE PAIR"
+
+           ELSE
+               DISPLAY "NOMBRE IMPAIRE"
+           END-IF
+
+       END-PERFORM
+
+           STOP RUN.
+
+       END PROGRAM PARITE.

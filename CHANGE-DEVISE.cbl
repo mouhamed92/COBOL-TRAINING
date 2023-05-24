@@ -1,0 +1,40 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CONVERSION-DEVISE.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       INPUT-OUTPUT SECTION.
+
+       DATA DIVISION.
+       FILE SECTION.
+       WORKING-STORAGE SECTION.
+
+       01  TABLE-CHANGE.
+         05 DEV-TAUX OCCURS 10 TIMES.
+           10  WS-DEVISE  PIC X(3).
+           10  WS-TAUX  PIC 9(5).
+
+
+       01  WS-I  PIC 9(2).
+
+
+       PROCEDURE DIVISION.
+
+           PERFORM VARYING WS-I FROM 1 BY 1 UNTIL WS-I > 5
+
+               DISPLAY " DEVISE "
+               ACCEPT WS-DEVISE(WS-I)
+
+               DISPLAY " TAUX DE CHANGE "
+               ACCEPT WS-TAUX(WS-I)
+
+           END-PERFORM
+
+           PERFORM VARYING WS-I FROM 1 BY 1 UNTIL WS-I > 5
+
+               DISPLAY "{" WS-DEVISE(WS-I)"," WS-TAUX(WS-I)"}"
+
+           END-PERFORM
+           EXIT.
+
+       END PROGRAM CONVERSION-DEVISE.

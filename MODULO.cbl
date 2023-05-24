@@ -1,0 +1,40 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. MODULO.
+       AUTHOR.    MOHAMED.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       INPUT-OUTPUT SECTION.
+
+       DATA DIVISION.
+       FILE SECTION.
+       WORKING-STORAGE SECTION.
+
+       01  WS-FIN-SAISIE   PIC X(1) VALUE 'N'.
+       01  WS-NOMBER       PIC 9(3).
+
+       PROCEDURE DIVISION.
+
+       PERFORM UNTIL WS-FIN-SAISIE = 'O'
+
+           DISPLAY "DONNER UN NOMBRE"
+           ACCEPT WS-NOMBER
+
+           IF WS-NOMBER = 0
+
+               MOVE 'O' TO WS-FIN-SAISIE
+
+           ELSE IF
+               FUNCTION MOD(WS-NOMBER,2) = 0
+               DISPLAY WS-NOMBER " EST DEVISIBLE PAR 2"
+
+           ELSE
+               DISPLAY WS-NOMBER " N'EST PAS DIVISIBLE PAR 2 !"
+
+           END-IF
+
+       END-PERFORM
+
+           STOP RUN.
+
+       END PROGRAM MODULO.

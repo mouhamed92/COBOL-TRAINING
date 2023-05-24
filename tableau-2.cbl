@@ -1,0 +1,60 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PGM-Table.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       INPUT-OUTPUT SECTION.
+
+       DATA DIVISION.
+       FILE SECTION.
+       WORKING-STORAGE SECTION.
+
+       01  WS-TABLE-1.
+           05 WS-A PIC A(13)  VALUE 'GOOD MORINING' OCCURS 5 TIMES.
+
+       01  WS-TABLE-2.
+           05 MONTH-1 PIC X(9) VALUE 'JANVIER'.
+           05 MONTH-2 PIC X(9) VALUE 'FEVRIER'.
+           05 MONTH-3 PIC X(9) VALUE 'MARS'.
+           05 MONTH-4 PIC X(9) VALUE 'AVRIL'.
+           05 MONTH-5 PIC X(9) VALUE 'MAI'.
+
+       01  TABLEAU-MOIS.
+           05 WS-LIBELLE-MOIS.
+               10 FILLER PIC X(9) VALUE 'JANVIER '.
+               10 FILLER PIC X(9) VALUE 'FEVRIER '.
+               10 FILLER PIC X(9) VALUE 'MARS '.
+               10 FILLER PIC X(9) VALUE 'AVRIL '.
+               10 FILLER PIC X(9) VALUE 'MAI '.
+               10 FILLER PIC X(9) VALUE 'JUIN '.
+               10 FILLER PIC X(9) VALUE 'JUILLET '.
+               10 FILLER PIC X(9) VALUE 'AOUT '.
+               10 FILLER PIC X(9) VALUE 'SEPTEMBR '.
+               10 FILLER PIC X(9) VALUE 'OCTOBER '.
+               10 FILLER PIC X(9) VALUE 'NOVEMBER '.
+               10 FILLER PIC X(9) VALUE 'DECEMBRE '.
+           05 WS-NOM-MOIS REDEFINES WS-LIBELLE-MOIS.
+               10 WS-MOIS PIC X(9) OCCURS 12 TIMES.
+
+       01 WEEK.
+           05 WS-DAY.
+               10 FILLER PIC X(9) VALUE 'MONDAY'.
+               10 FILLER PIC X(9) VALUE 'TUESDAY'.
+               10 FILLER PIC X(9) VALUE 'THURSDAY'.
+           05 WS-DAY-OF-WEEK REDEFINES WS-DAY.
+               10 WS-DWK  PIC X(9) OCCURS 3 TIMES.
+
+
+
+       PROCEDURE DIVISION.
+
+           DISPLAY WS-TABLE-1.
+           DISPLAY WS-TABLE-2.
+           DISPLAY WS-LIBELLE-MOIS.
+           DISPLAY WS-NOM-MOIS.
+
+           DISPLAY WS-DAY-OF-WEEK.
+
+       STOP RUN.
+
+       END PROGRAM PGM-Table.

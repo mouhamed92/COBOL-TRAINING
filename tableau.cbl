@@ -1,0 +1,47 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. TABLEAU.
+       AUTHOR.    MOHAMED.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       INPUT-OUTPUT SECTION.
+
+       DATA DIVISION.
+       FILE SECTION.
+       WORKING-STORAGE SECTION.
+
+       01  TABLEAU.
+           05 WS-MOIS PIC X(9) OCCURS 12 TIMES.
+
+       01  TABLEAU-2.
+           05 TABLEAU-CALANDERIER OCCURS 12 TIMES.
+              10 MOIS PIC X(9) VALUE SPACE.
+              10 JOUR PIC 9(2) VALUE ZERO.
+
+       01  TABLEAU-MOIS.
+           05 WS-LIBELLE-MOIS.
+               10 FILLER PIC X(9) VALUE 'JANVIER '.
+               10 FILLER PIC X(9) VALUE 'FEVRIER '.
+               10 FILLER PIC X(9) VALUE 'MARS '.
+               10 FILLER PIC X(9) VALUE 'AVRIL '.
+               10 FILLER PIC X(9) VALUE 'MAI '.
+               10 FILLER PIC X(9) VALUE 'JUIN '.
+               10 FILLER PIC X(9) VALUE 'JUILLET '.
+               10 FILLER PIC X(9) VALUE 'AOUT '.
+               10 FILLER PIC X(9) VALUE 'SEPTEMBR '.
+               10 FILLER PIC X(9) VALUE 'OCTOBER '.
+               10 FILLER PIC X(9) VALUE 'NOVEMBER '.
+               10 FILLER PIC X(9) VALUE 'DECEMBRE '.
+           05 WS-NOM-MOIS REDEFINES WS-LIBELLE-MOIS.
+               10 WS-MOIS PIC X(9) OCCURS 12 TIMES.
+
+
+       PROCEDURE DIVISION.
+
+           DISPLAY TABLEAU.
+           DISPLAY WS-NOM-MOIS.
+           DISPLAY TABLEAU-2.
+
+           STOP RUN.
+
+       END PROGRAM TABLEAU.

@@ -1,0 +1,33 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. EQUATION.
+       AUTHOR.    MOHAMED.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       INPUT-OUTPUT SECTION.
+
+       DATA DIVISION.
+       FILE SECTION.
+       WORKING-STORAGE SECTION.
+
+       01  WS-A PIC 9(1) VALUE ZEROS.
+       01  WS-B PIC 9(1) VALUE ZERO.
+       01  WS-X PIC 9(2)V9 VALUE ZERO.
+
+       PROCEDURE DIVISION.
+
+           DISPLAY "DONNER A".
+           ACCEPT WS-A.
+
+           DISPLAY "DONNER B".
+           ACCEPT WS-B.
+
+           COMPUTE WS-X = -(WS-B/WS-A).
+
+           DISPLAY "X = " WS-X.
+
+           STOP RUN.
+
+
+
+       END PROGRAM EQUATION.

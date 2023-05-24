@@ -1,0 +1,58 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PROG-1.
+       AUTHOR. MOHAMED.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       INPUT-OUTPUT SECTION.
+
+       DATA DIVISION.
+       FILE SECTION.
+       WORKING-STORAGE SECTION.
+
+       01 WS-MSG PIC X(60).
+       01 WS-COMPTEUR PIC 9(02).
+       01 WS-PRIX     PIC 9(4)V99.
+       01 WS-MODEL PIC X.
+
+       01 WS-INFO.
+           05 WS-PRNOM PIC A(15).
+           05 WS-NOM   PIC A(15).
+           05 WS-AGE   PIC 9(2).
+
+       PROCEDURE DIVISION.
+
+       IF WS-PRIX IS NUMERIC
+           DISPLAY "LE PRIX EST VALIDE"
+       ELSE
+           DISPLAY "LE PRIX EST INVALIDE"
+       END-IF.
+
+       ACCEPT WS-AGE.
+       ACCEPT WS-NOM.
+
+       IF WS-AGE >= 18 AND WS-AGE <=25
+           DISPLAY "AGE EST DANS L'INTERVALLE"
+       ELSE
+           DISPLAY "AGE EST HORS INTERVALLE"
+       END-IF.
+
+       IF WS-NOM IS ALPHABETIC-UPPER
+           DISPLAY "LE NOM EST MAJUSCULE !"
+       ELSE
+           DISPLAY "LE NOM N'EST PAS MAJUSCULE"
+       END-IF
+
+       SET WS-MODEL TO 'B'.
+
+       IF WS-MODEL = 'B'
+           DISPLAY "MODEL IS TRUE"
+       ELSE
+           DISPLAY "MODEL IS FALSE"
+       END-IF
+
+       STOP RUN.
+
+
+
+       END PROGRAM PROG-1.
