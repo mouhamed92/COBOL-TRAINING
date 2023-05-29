@@ -14,9 +14,7 @@
            10  WS-DEVISE  PIC X(3).
            10  WS-TAUX  PIC 9(5).
 
-
        01  WS-I  PIC 9(2).
-
 
        PROCEDURE DIVISION.
 

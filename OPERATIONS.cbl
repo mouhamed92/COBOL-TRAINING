@@ -64,7 +64,7 @@
              ACCEPT WS-MONTANT.
 
              IF WS-SOLDE < WS-MONTANT
-               DISPLAY "SOLDE INSUFFISANT"
+               DISPLAY "SOLDE INSUFFISAsNT"
              ELSE
                SUBTRACT WS-MONTANT FROM WS-SOLDE
              END-IF.
