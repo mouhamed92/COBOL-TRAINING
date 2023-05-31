@@ -1,10 +1,10 @@
-       IDENTIFICATION DIVISION.
+ !       IDENTIFICATION DIVISION.
        PROGRAM-ID. FILE-HND.
        ENVIRONMENT DIVISION.
        CONFIGURATION SECTION.
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
-
+      *assign physique file to loqique file
             SELECT ETUDIANT ASSIGN TO
             "C:\work space\Cobol path\labs\youTube labs\ETUDIANTS.txt"
             ORGANIZATION IS LINE SEQUENTIAL
@@ -12,7 +12,7 @@
 
        DATA DIVISION.
        FILE SECTION.
-
+      *declaration of file and record content
        FD ETUDIANT.
        01  ETUDIANT-RECORD.
          05 ETD-ID    PIC   X(10).
@@ -22,7 +22,7 @@
          05 EMP-EXP   PIC   X(1).
 
        WORKING-STORAGE SECTION.
-
+      *
        01  ET-FILESTATUS   PIC X(2).
        01  ETD-REQUEST     PIC 9(1) VALUE ZERO.
        01  ETD-READ-STATUS PIC X(1).
