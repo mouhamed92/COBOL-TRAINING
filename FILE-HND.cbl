@@ -48,7 +48,9 @@
                      ADD 1 TO ETD-REQUEST
                      ON SIZE ERROR
                      DISPLAY "SIZE ERROR AT PAS-A"
-
+      *
+      *
+      *
                      END-ADD
                         IF ETD-REQUEST = 0 THEN
                             DISPLAY "NO REQUEST FOR THE DAY"
