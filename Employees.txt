@@ -3,5 +3,5 @@
 103 Naina Kukreja        03/09/2001   2300.00  Chef de projet
 104 Akash Singh          01/01/2000   1000.30  Technicien
 
-00105Mohamed                 20/08/19972000.00Ingenieur
-00106MHAMMAMI MOHAMED         /07/06/19920.2000.00iINGENIEUR
+00105	Mohamed	                 				20/08/1997	2000.00		Ingenieur
+00106	MHAMMAMI MOHAMED         					/07/06/19920	2000.00 	INGENIEUR
